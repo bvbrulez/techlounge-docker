@@ -30,6 +30,18 @@ $ exit
   $ docker ps -a
   ```
 
+## Container starten
+
+```shell
+# -i interactive
+# -t tty terminal
+$ docker run -it -d ubuntu
+...
+apt-get update
+apt-get install curl
+curl http://www.google.de
+```
+
 ## Container im Hintergrund starten
 
 ```shell
@@ -67,6 +79,14 @@ $ docker system prune
 
 ```shell
 $ docker run -d -p 8080:80 httpd
+```
+
+## Logausgaben
+
+```shell
+$ docker logs <container_id>
+# mit Zeitstempel
+$ docker logs -t <container_id>
 ```
 
 ## Wichtige Links der Folge
