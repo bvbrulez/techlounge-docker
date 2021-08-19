@@ -23,11 +23,25 @@ $ npx express-generator
 
 Alternativ mit Docker erstellen:
 
+- Nodejs wird damit nicht auf dem Computer benötigt
+
 ```shell
+# -v oder --volume mountet ein Host-Verzeichnis im Container
+# --name setzt den Namen des Containers
+$ docker run -v "$(pwd):/hello" --name name_des_containers node:lts-alpine ls /hello
+# -w oder --workdir setzt das aktuelle Verzeichnis im Container (eine Art "ls", damit wird direkt in das Verzeichnis im Container gegangen)
 $ docker run -v "$(pwd):/hello" -w /hello node:lts-alpine npx express-generator
 ```
 
 ## Dockerfile
+
+- File erstellen
+
+```shell
+$ touch Dockerfile
+$ vi Dockerfile
+```
+
 
 ```dockerfile
 FROM node:lts-alpine
@@ -56,6 +70,7 @@ Im Browser öffnen: http://localhost:8080
 ## Eigenes Image auf den Docker Hub
 
 ```shell
+$ docker login
 $ docker tag hello dockerid/hello
 $ docker push dockerid/hello
 ```
