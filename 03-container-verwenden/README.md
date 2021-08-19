@@ -57,6 +57,18 @@ $ docker stop container_id
 
 ## Hostsystem aufräumen
 
+- Einen bestimmten Container löschen
+
+```shell
+$ docker rm container_id
+```
+
+- Einen bestimmten Container nach Beendigung direkt löschen
+
+```shell
+$ docker run --rm -it ubuntu
+```
+
 - Alle beendeten Container löschen
 
 ```shell
